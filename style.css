@@ -1,0 +1,192 @@
+:root {
+  --dark: #5c5470;
+  --darker: #2a2438;
+  --darkest: #352f44;
+  --grey: #dbd8e3;
+  --pink: #ec4899;
+  --light: #eee;
+  --primary-font: "Architects Daughter", cursive;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: "Architects Daughter", cursive; */
+  font-family: var(--primary-font);
+}
+
+body {
+  background-color: var(--dark);
+}
+
+.main-container {
+  box-shadow: 1px 2px 20px var(--darker);
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 32px;
+}
+header {
+  padding-bottom: 10px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: var(--grey);
+  margin-bottom: 16px;
+  cursor: default;
+}
+
+header .new-task {
+  display: flex;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+header .new-task .add-task {
+  width: 100%;
+  background-color: var(--darker);
+  padding: 16px;
+  border-radius: 16px;
+  margin-right: 16px;
+  color: var(--light);
+  font-size: 1.25em;
+}
+
+header .new-task .submit-task {
+  color: var(--pink);
+  font-size: 1.5em;
+  font-weight: 700;
+  background-image: linear-gradient(
+    90deg,
+    rgba(190, 11, 63, 1) 0%,
+    rgb(47, 19, 172) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+header .new-task .submit-task:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgb(47, 19, 172) 0%,
+    rgba(190, 11, 63, 1) 100%
+  );
+  opacity: 0.8;
+}
+
+.task-list {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.task-list h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: var(--grey);
+  margin-bottom: 16px;
+}
+
+.task-list .tasks .task-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkest);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.task-list .tasks .task-box:hover {
+  background-color: #352f44b7;
+}
+
+.task-list .tasks .task-box .content {
+  display: flex;
+  align-items: center;
+}
+
+.task-list .tasks .task-box .content .checkbox {
+  margin-right: 10px;
+}
+
+.task-list .tasks .task-box .content .task {
+  color: var(--light);
+  font-size: 1.125em;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.task-list .tasks .task-box .content .task.strikeout {
+  text-decoration: line-through;
+  text-decoration-color: var(--pink);
+  text-decoration-thickness: 20%;
+}
+
+.task-list .tasks .task-box .actions {
+  display: flex;
+}
+
+.task-list .tasks .task-box .actions button {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1.125em;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.task-list .tasks .task-box .actions button:hover {
+  opacity: 0.8;
+}
+
+.task-list .tasks .task-box .actions .edit {
+  background-image: linear-gradient(90deg,
+    rgba(190, 11, 63, 1) 0%,
+    rgba(138, 19, 172, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.task-list .tasks .task-box .actions .edit:hover {
+	background-image: linear-gradient( 90deg, rgb(205 3 255) 0%, rgb(229 188 241) 100% );
+}
+
+.task-list .tasks .task-box .actions .delete {
+  color: crimson;
+}
+
+.task-list .tasks .task-box .actions .delete:hover {
+  background-color: var(--darker);
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 425px) {
+  body {
+    font-size: 12px;
+  }
+  header h1 {
+    text-align: center;
+  }
+
+  header .new-task {
+    flex-direction: column;
+  }
+
+  header .new-task .submit-task {
+    margin-top: 15px;
+  }
+}
